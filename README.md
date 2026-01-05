@@ -3,7 +3,7 @@
 A modern, secure, and aesthetic web application built with **Next.js 15**, **MongoDB**, **NextAuth.js**, and **TailwindCSS**.
 
 ![Dashboard Preview](https://github.com/nextjs/next.js/assets/placeholder.png) 
-*(Replace with actual screenshot if available)*
+(https://task-manager-u3zr.vercel.app/)
 
 ## ✨ Features
 

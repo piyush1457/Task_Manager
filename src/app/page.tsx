@@ -1,65 +1,59 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, LayoutDashboard, ShieldCheck, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="flex min-h-screen flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl space-y-8">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-2xl shadow-indigo-500/20">
+          <Zap className="h-10 w-10 text-white" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl text-white drop-shadow-sm">
+          Scalable Task <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Dashboard</span>
+        </h1>
+
+        <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Experience a modern, secure, and scalable web application built with <span className="text-white font-semibold">Next.js 15</span>, <span className="text-white font-semibold">MongoDB</span>, and <span className="text-white font-semibold">Tailwind</span>.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-5 justify-center mt-10">
+          <Link
+            href="/login"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-indigo-500/25"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Get Started
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+          <Link
+            href="/signup"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-200 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm"
           >
-            Documentation
-          </a>
+            Create Account
+          </Link>
         </div>
-      </main>
-    </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 pt-10 border-t border-white/5">
+          <div className="glass-card p-6 rounded-2xl">
+            <ShieldCheck className="h-10 w-10 text-emerald-400 mb-4 mx-auto" />
+            <h3 className="text-lg font-bold text-white mb-2">Secure Auth</h3>
+            <p className="text-sm text-slate-400">JWT-based authentication with NextAuth.js and bcrypt encryption.</p>
+          </div>
+          <div className="glass-card p-6 rounded-2xl">
+            <LayoutDashboard className="h-10 w-10 text-purple-400 mb-4 mx-auto" />
+            <h3 className="text-lg font-bold text-white mb-2">Interactive Dashboard</h3>
+            <p className="text-sm text-slate-400">Real-time CRUD operations with simplified state management.</p>
+          </div>
+          <div className="glass-card p-6 rounded-2xl">
+            <Zap className="h-10 w-10 text-amber-400 mb-4 mx-auto" />
+            <h3 className="text-lg font-bold text-white mb-2">High Performance</h3>
+            <p className="text-sm text-slate-400">Optimized with Next.js App Router and Server Actions.</p>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
